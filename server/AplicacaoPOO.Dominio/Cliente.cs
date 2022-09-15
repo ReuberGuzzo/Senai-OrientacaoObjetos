@@ -8,10 +8,11 @@ namespace AplicacaoPOO.Dominio
 {
     public class Cliente
     {
-        string Nome { get; set; }
-        string CPF { get; set; }
-        Debito Debito { get; set; }
-        Credito credito { get; set; }
+        public string Nome { get; set; }
+        public string CPF { get; set; }
+        public double SaldoInicial { get; set; }
+        public Debito Debito { get; set; }
+        public Credito credito { get; set; }
 
     }
 }

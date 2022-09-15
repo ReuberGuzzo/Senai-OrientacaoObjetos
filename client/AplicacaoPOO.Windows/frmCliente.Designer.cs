@@ -36,6 +36,11 @@
             this.txtCpf = new System.Windows.Forms.TextBox();
             this.txtValorDebito = new System.Windows.Forms.TextBox();
             this.txtValorCredito = new System.Windows.Forms.TextBox();
+            this.btnCalcular = new System.Windows.Forms.Button();
+            this.lblSaldoInicial = new System.Windows.Forms.Label();
+            this.lblSaldoInicialValor = new System.Windows.Forms.Label();
+            this.lblSaldo = new System.Windows.Forms.Label();
+            this.lblSaldoValor = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblNome
@@ -107,12 +112,69 @@
             this.txtValorCredito.Size = new System.Drawing.Size(110, 23);
             this.txtValorCredito.TabIndex = 7;
             // 
+            // btnCalcular
+            // 
+            this.btnCalcular.Location = new System.Drawing.Point(135, 133);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Size = new System.Drawing.Size(90, 23);
+            this.btnCalcular.TabIndex = 8;
+            this.btnCalcular.Text = "Calcular";
+            this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
+            // 
+            // lblSaldoInicial
+            // 
+            this.lblSaldoInicial.AutoSize = true;
+            this.lblSaldoInicial.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSaldoInicial.Location = new System.Drawing.Point(266, 18);
+            this.lblSaldoInicial.Name = "lblSaldoInicial";
+            this.lblSaldoInicial.Size = new System.Drawing.Size(90, 20);
+            this.lblSaldoInicial.TabIndex = 9;
+            this.lblSaldoInicial.Text = "Saldo Inicial";
+            // 
+            // lblSaldoInicialValor
+            // 
+            this.lblSaldoInicialValor.AutoSize = true;
+            this.lblSaldoInicialValor.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSaldoInicialValor.Location = new System.Drawing.Point(300, 38);
+            this.lblSaldoInicialValor.Name = "lblSaldoInicialValor";
+            this.lblSaldoInicialValor.Size = new System.Drawing.Size(17, 20);
+            this.lblSaldoInicialValor.TabIndex = 10;
+            this.lblSaldoInicialValor.Text = "0";
+            this.lblSaldoInicialValor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblSaldo
+            // 
+            this.lblSaldo.AutoSize = true;
+            this.lblSaldo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSaldo.Location = new System.Drawing.Point(287, 75);
+            this.lblSaldo.Name = "lblSaldo";
+            this.lblSaldo.Size = new System.Drawing.Size(47, 20);
+            this.lblSaldo.TabIndex = 11;
+            this.lblSaldo.Text = "Saldo";
+            // 
+            // lblSaldoValor
+            // 
+            this.lblSaldoValor.AutoSize = true;
+            this.lblSaldoValor.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSaldoValor.Location = new System.Drawing.Point(300, 100);
+            this.lblSaldoValor.Name = "lblSaldoValor";
+            this.lblSaldoValor.Size = new System.Drawing.Size(17, 20);
+            this.lblSaldoValor.TabIndex = 12;
+            this.lblSaldoValor.Text = "0";
+            this.lblSaldoValor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(300, 160);
+            this.ClientSize = new System.Drawing.Size(368, 168);
+            this.Controls.Add(this.lblSaldoValor);
+            this.Controls.Add(this.lblSaldo);
+            this.Controls.Add(this.lblSaldoInicialValor);
+            this.Controls.Add(this.lblSaldoInicial);
+            this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.txtValorCredito);
             this.Controls.Add(this.txtValorDebito);
             this.Controls.Add(this.txtCpf);
@@ -138,5 +200,10 @@
         private TextBox txtCpf;
         private TextBox txtValorDebito;
         private TextBox txtValorCredito;
+        private Button btnCalcular;
+        private Label lblSaldoInicial;
+        private Label lblSaldoInicialValor;
+        private Label lblSaldo;
+        private Label lblSaldoValor;
     }
 }
