@@ -73,19 +73,21 @@
             // 
             // btnCalcular
             // 
+            this.btnCalcular.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnCalcular.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCalcular.Location = new System.Drawing.Point(98, 114);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(138, 38);
             this.btnCalcular.TabIndex = 4;
             this.btnCalcular.Text = "Calcular";
-            this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.UseVisualStyleBackColor = false;
             this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // frmCotacaoReal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(343, 174);
             this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.txtCarteiraDolar);
