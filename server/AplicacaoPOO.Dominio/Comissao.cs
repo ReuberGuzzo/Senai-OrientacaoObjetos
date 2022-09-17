@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace AplicacaoPOO.Dominio
 {
-    internal class Comissao
+    public class Comissao
     {
+        public static double ValorComissao(double valorUnitario, int quantidadePeca)
+        {
+            double resultado = (valorUnitario * quantidadePeca) * 0.05;
+            return resultado;
+        }
     }
 }

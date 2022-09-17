@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AplicacaoPOO.Dominio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,15 @@ namespace AplicacaoPoo.Estrutural.Windows.Funcionalidades
         public frmComissao()
         {
             InitializeComponent();
+        }
+        private void txtQuantidade_TextChanged(object sender, EventArgs e)
+        {
+            int quantidadePeca = int.Parse(txtQuantidade.Text);
+            double valorUnitario = double.Parse(txtValorUnitario.Text);
+
+            var result = (quantidadePeca * valorUnitario) * 0.05;
+
+            txtResultado.Text = Comissao.ValorComissao(valorUnitario, quantidadePeca).ToString();
         }
     }
 }
