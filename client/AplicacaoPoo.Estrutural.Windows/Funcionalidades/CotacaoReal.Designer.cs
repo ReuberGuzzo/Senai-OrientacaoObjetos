@@ -52,6 +52,7 @@
             this.txtCotacaoDolar.Name = "txtCotacaoDolar";
             this.txtCotacaoDolar.Size = new System.Drawing.Size(100, 29);
             this.txtCotacaoDolar.TabIndex = 1;
+            this.txtCotacaoDolar.TextChanged += new System.EventHandler(this.txtCotacaoDolar_TextChanged);
             // 
             // label1
             // 
@@ -70,6 +71,7 @@
             this.txtCarteiraDolar.Name = "txtCarteiraDolar";
             this.txtCarteiraDolar.Size = new System.Drawing.Size(100, 29);
             this.txtCarteiraDolar.TabIndex = 3;
+            this.txtCarteiraDolar.TextChanged += new System.EventHandler(this.txtCarteiraDolar_TextChanged);
             // 
             // btnCalcular
             // 
