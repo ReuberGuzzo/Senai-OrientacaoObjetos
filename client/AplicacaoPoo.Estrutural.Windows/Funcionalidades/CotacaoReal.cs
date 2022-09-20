@@ -11,8 +11,12 @@ using System.Windows.Forms;
 
 namespace AplicacaoPoo.Estrutural.Windows.Funcionalidades
 {
+    
     public partial class frmCotacaoReal : Form
     {
+        private bool CotacaoEhValido;
+        private bool CarteiraEmDolarEhValido;
+
         public frmCotacaoReal()
         {
             InitializeComponent();
@@ -21,8 +25,8 @@ namespace AplicacaoPoo.Estrutural.Windows.Funcionalidades
         }
             private void btnCalcular_Click(object sender, EventArgs e)
         {
-                double carteiraDolar = double.Parse(txtCarteiraDolar.Text);
                 double cotacaoDolar = double.Parse(txtCotacaoDolar.Text);
+                double carteiraDolar = double.Parse(txtCarteiraDolar.Text);
 
             MessageBox.Show("O Valor em Real é: " + Conversao.ConversaoDolar(carteiraDolar,cotacaoDolar).ToString(), "Conversão para Dolar");
         }
@@ -31,13 +35,25 @@ namespace AplicacaoPoo.Estrutural.Windows.Funcionalidades
         {
             try
             {
-                var resultado = decimal.Parse(txtCotacaoDolar.Text);
+                var resultado = decimal.Parse(txtCarteiraDolar.Text);
+                CarteiraEmDolarEhValido = true;
+
+                if (CarteiraEmDolarEhValido && CotacaoEhValido)
+                {
+                    btnCalcular.Enabled = true;
+                }
+                else
+                {
+                    
+                }
             }
             catch (Exception)
             {
                 MessageBox.Show("Digite um valor numerico.");
-                txtCotacaoDolar.Focus();
-                throw;
+                txtCarteiraDolar.Focus();
+                CarteiraEmDolarEhValido = false;
+                btnCalcular.Enabled = false;
+
             }
         }
 
@@ -45,13 +61,26 @@ namespace AplicacaoPoo.Estrutural.Windows.Funcionalidades
         {
             try
             {
-                var resultado = decimal.Parse(txtCarteiraDolar.Text);
+                var resultado = decimal.Parse(txtCotacaoDolar.Text);
+                CotacaoEhValido = true;
+
+                if (CarteiraEmDolarEhValido && CotacaoEhValido)
+                {
+                    btnCalcular.Enabled = true;
+                }
+                else 
+                {
+                    btnCalcular.Enabled = false;
+                }
+
             }
             catch (Exception)
             {
                 MessageBox.Show("Digite um valor numerico.");
-                txtCarteiraDolar.Focus();
-                throw;
+                txtCotacaoDolar.Focus();
+                CotacaoEhValido = false;
+                btnCalcular.Enabled = false;
+
             }
         }
     }
