@@ -1,5 +1,4 @@
-﻿using AplicacaoPoo.Estrutural.Windows.Funcionalidades;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,22 +10,22 @@ using System.Windows.Forms;
 
 namespace AplicacaoPoo.Estrutural.Windows
 {
-    public partial class Principal : Form
+    public partial class frmPrincipal : Form
     {
-        public Principal()
+        public frmPrincipal()
         {
             InitializeComponent();
         }
 
-        private void btnCotacao_Click(object sender, EventArgs e)
+        private void btnAbrirFormConversorMoedas_Click(object sender, EventArgs e)
         {
-            var form = new frmCotacaoReal();
+            var form = new frmConversorMoeda();
             form.Show();
         }
 
-        private void btnComissao_Click(object sender, EventArgs e)
+        private void btnAbrirFormComissionamento_Click(object sender, EventArgs e)
         {
-            var form = new frmComissao();
+            var form = new frmComissionamento();
             form.Show();
         }
     }

@@ -1,2 +1,2 @@
 # Senai-OrientacaoObjetos
-Estudando os Conceitos de orientação a Objetos em C#, .Net6 e Windows Form
+Estudando os conceitos de orientação a objetos em c#, .net6 e Windows Forms.

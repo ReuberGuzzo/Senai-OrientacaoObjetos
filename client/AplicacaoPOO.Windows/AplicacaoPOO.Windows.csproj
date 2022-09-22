@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\server\AplicacaoPOO.Dominio\AplicacaoPOO.Dominio.csproj" />
+    <ProjectReference Include="..\..\server\AplicacaoPoo.Dominio\AplicacaoPoo.Dominio.csproj" />
   </ItemGroup>
 
 </Project>

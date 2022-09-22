@@ -1,4 +1,4 @@
-namespace AplicacaoPOO.Windows
+namespace AplicacaoPoo.Windows
 {
     internal static class Program
     {
