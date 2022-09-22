@@ -20,7 +20,7 @@ namespace AplicacaoPoo.Estrutural.Windows
             btnConverterEmReal.Enabled = false;
 
         }
-
+        
         private void btnConverterEmReal_Click(object sender, EventArgs e)
         {
             var valorEmDolar = decimal.Parse(txtValorEmDolar.Text);
