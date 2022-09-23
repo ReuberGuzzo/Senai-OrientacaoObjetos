@@ -1,4 +1,5 @@
-﻿using AplicacaoPoo.Dominio.services;
+﻿using AplicacaoPoo.Dominio.Helpers;
+using AplicacaoPoo.Dominio.services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,37 +20,32 @@ namespace AplicacaoPoo.Estrutural.Windows
             InitializeComponent();
             btnConverterEmReal.Enabled = false;
 
+            lblPrimeiroValor.Text = $"1 {MoedaHelper.Dolar} igual a";
+            lblSegundoValor.Text = $"5,12 {MoedaHelper.Real}";
         }
         
-        private void btnConverterEmReal_Click(object sender, EventArgs e)
-        {
-            var valorEmDolar = decimal.Parse(txtValorEmDolar.Text);
-            
-            var moeda = new ConverterMoedaService();
-            var resultado = moeda.ConverterDolarEmReal(valorEmDolar);
-
-            //string interpolation
-            MessageBox.Show($"Valor convertido é: {resultado} Reais");
-        }
-
+        
         private void txtValorEmDolar_TextChanged(object sender, EventArgs e)
         {
-            try
+          try
             {
-                if (txtValorEmDolar.Text == "")
+                if (txtValorEmDolar.Text == "") return;
                 {
-                    btnConverterEmReal.Enabled = false;
-                    return;
-                }
+                   
+                    var valorEmDolar = decimal.Parse(txtValorEmDolar.Text);
 
-                var resultado = decimal.Parse(txtValorEmDolar.Text);
-                btnConverterEmReal.Enabled = true;
+                    var moeda = new ConverterMoedaService();
+                    var resultado = moeda.ConverterDolarEmReal(valorEmDolar);
+                    lblPrimeiroValor.Text = $"{valorEmDolar} {MoedaHelper.Dolar} igual a";
+                    lblSegundoValor.Text = $"{resultado} {MoedaHelper.Real}";
+                }
             }
+
             catch (Exception)
             {
                 MessageBox.Show("A cotação do dalor é um valor decimal");
                 txtValorEmDolar.Focus();
-                btnConverterEmReal.Enabled = false;
+              
             }
         }            
     }
