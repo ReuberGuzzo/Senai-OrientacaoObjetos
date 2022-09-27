@@ -89,14 +89,15 @@
             this.cmbMoedas.ForeColor = System.Drawing.Color.White;
             this.cmbMoedas.FormattingEnabled = true;
             this.cmbMoedas.Items.AddRange(new object[] {
-            "Real Brasileiro",
-            "Dolar Americano",
+            "Dolar",
+            "Real",
             "Euro",
-            "Libra Esterlina"});
+            "Libra"});
             this.cmbMoedas.Location = new System.Drawing.Point(212, 87);
             this.cmbMoedas.Name = "cmbMoedas";
             this.cmbMoedas.Size = new System.Drawing.Size(119, 25);
             this.cmbMoedas.TabIndex = 5;
+            this.cmbMoedas.SelectedIndexChanged += new System.EventHandler(this.cmbMoedas_SelectedIndexChanged);
             // 
             // frmConversorMoeda
             // 

@@ -23,12 +23,12 @@ namespace AplicacaoPoo.Dominio.services
             return valor * CotacaoDolar;
         }
         
-        public decimal ConverterLibrasEmReal(decimal valor)
+        public decimal ConverterEuroEmReal(decimal valor)
         {
             return valor * CotacaoLibra;
         }
         
-        public decimal ConverterEuroEmReal(decimal valor)
+        public decimal ConverterLibrasEmReal(decimal valor)
         {
             return valor * CotacaoEuro;
         }
