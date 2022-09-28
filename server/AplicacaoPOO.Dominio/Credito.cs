@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AplicacaoPOO.Dominio
+namespace AplicacaoPoo.Dominio
 {
     public class Credito
     {
@@ -12,6 +12,11 @@ namespace AplicacaoPOO.Dominio
         int Parcelas { get; set; }
         float Juros { get; set; }
 
+        public double CreditarValor(double saldo, double credito)
+        {
+            var resultado = saldo + credito;
+            return resultado;
 
+        }
     }
 }
