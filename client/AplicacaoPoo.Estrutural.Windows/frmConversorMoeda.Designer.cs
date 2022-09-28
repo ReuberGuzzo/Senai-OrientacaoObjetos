@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.txtValorEmDolar = new System.Windows.Forms.TextBox();
-            this.btnConverterEmReal = new System.Windows.Forms.Button();
             this.lblPrimeiroValor = new System.Windows.Forms.Label();
             this.lblSegundoValor = new System.Windows.Forms.Label();
             this.cmbMoedas = new System.Windows.Forms.ComboBox();
@@ -47,19 +46,6 @@
             this.txtValorEmDolar.Size = new System.Drawing.Size(190, 22);
             this.txtValorEmDolar.TabIndex = 1;
             this.txtValorEmDolar.TextChanged += new System.EventHandler(this.txtValorEmDolar_TextChanged);
-            // 
-            // btnConverterEmReal
-            // 
-            this.btnConverterEmReal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnConverterEmReal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConverterEmReal.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnConverterEmReal.ForeColor = System.Drawing.Color.Black;
-            this.btnConverterEmReal.Location = new System.Drawing.Point(95, 152);
-            this.btnConverterEmReal.Name = "btnConverterEmReal";
-            this.btnConverterEmReal.Size = new System.Drawing.Size(158, 28);
-            this.btnConverterEmReal.TabIndex = 2;
-            this.btnConverterEmReal.Text = "Converter em Reais";
-            this.btnConverterEmReal.UseVisualStyleBackColor = false;
             // 
             // lblPrimeiroValor
             // 
@@ -108,7 +94,6 @@
             this.Controls.Add(this.cmbMoedas);
             this.Controls.Add(this.lblSegundoValor);
             this.Controls.Add(this.lblPrimeiroValor);
-            this.Controls.Add(this.btnConverterEmReal);
             this.Controls.Add(this.txtValorEmDolar);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "frmConversorMoeda";
@@ -120,7 +105,6 @@
 
         #endregion
         private TextBox txtValorEmDolar;
-        private Button btnConverterEmReal;
         private Label lblPrimeiroValor;
         private Label lblSegundoValor;
         private ComboBox cmbMoedas;
