@@ -15,6 +15,12 @@ namespace AplicacaoPoo.Estrutural.Windows
         public frmComissionamento()
         {
             InitializeComponent();
+            cmbVendedoresCadastrados.Focus();
+        }
+
+        private void comboBox1_ValueMemberChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
