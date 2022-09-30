@@ -29,6 +29,7 @@ namespace AplicacaoPoo.Estrutural.Windows
             {
                 //Declaração de Variaveis:
                 string nome = cmbVendedoresCadastrados.Text;
+                string data = mtbData.Text;
                 int codigoPeca = int.Parse(txtPecaCodigo.Text);
                 double precoUnitario = double.Parse(txtPrecoPeca.Text);
                 int quantidadeVendida = int.Parse(txtQuantidadepecaVendida.Text);
@@ -38,6 +39,7 @@ namespace AplicacaoPoo.Estrutural.Windows
 
                 //Adicionando os dados na List Box
                 ltbListaDePecas.Items.Add("Nome do Vendedor: " + nome);
+                ltbListaDePecas.Items.Add("Data da Venda:" + data);
                 ltbListaDePecas.Items.Add("Código da Peça: " + codigoPeca);
                 ltbListaDePecas.Items.Add("Preço Unitario: " + precoUnitario);
                 ltbListaDePecas.Items.Add("Quantidade Vendida: " + quantidadeVendida);

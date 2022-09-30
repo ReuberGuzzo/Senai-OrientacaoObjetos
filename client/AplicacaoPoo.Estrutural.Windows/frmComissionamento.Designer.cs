@@ -35,6 +35,7 @@
             this.cmbVendedoresCadastrados = new System.Windows.Forms.ComboBox();
             this.lblVendedorNome = new System.Windows.Forms.Label();
             this.ltbListaDePecas = new System.Windows.Forms.ListBox();
+            this.mtbData = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // txtPecaCodigo
@@ -80,7 +81,7 @@
             // cmbVendedoresCadastrados
             // 
             this.cmbVendedoresCadastrados.FormattingEnabled = true;
-            this.cmbVendedoresCadastrados.Location = new System.Drawing.Point(140, 9);
+            this.cmbVendedoresCadastrados.Location = new System.Drawing.Point(102, 8);
             this.cmbVendedoresCadastrados.Name = "cmbVendedoresCadastrados";
             this.cmbVendedoresCadastrados.Size = new System.Drawing.Size(129, 23);
             this.cmbVendedoresCadastrados.TabIndex = 5;
@@ -104,12 +105,22 @@
             this.ltbListaDePecas.Size = new System.Drawing.Size(478, 184);
             this.ltbListaDePecas.TabIndex = 7;
             // 
+            // mtbData
+            // 
+            this.mtbData.Location = new System.Drawing.Point(251, 8);
+            this.mtbData.Mask = "00/00/0000";
+            this.mtbData.Name = "mtbData";
+            this.mtbData.Size = new System.Drawing.Size(100, 23);
+            this.mtbData.TabIndex = 8;
+            this.mtbData.ValidatingType = typeof(System.DateTime);
+            // 
             // frmComissionamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(516, 290);
+            this.Controls.Add(this.mtbData);
             this.Controls.Add(this.ltbListaDePecas);
             this.Controls.Add(this.lblVendedorNome);
             this.Controls.Add(this.cmbVendedoresCadastrados);
@@ -133,5 +144,6 @@
         private ComboBox cmbVendedoresCadastrados;
         private Label lblVendedorNome;
         private ListBox ltbListaDePecas;
+        private MaskedTextBox mtbData;
     }
 }
