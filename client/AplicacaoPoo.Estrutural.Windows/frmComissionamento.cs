@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AplicacaoPoo.Dominio.Helpers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,12 +16,40 @@ namespace AplicacaoPoo.Estrutural.Windows
         public frmComissionamento()
         {
             InitializeComponent();
-            cmbVendedoresCadastrados.Focus();
+            var vendedores = new Vendedor();
+            cmbVendedoresCadastrados.DataSource = vendedores.VendedorList();
+            cmbVendedoresCadastrados.DisplayMember = "Nome";
+            cmbVendedoresCadastrados.SelectedIndex = 0;
         }
 
-        private void comboBox1_ValueMemberChanged(object sender, EventArgs e)
+        
+        private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                //Declaração de Variaveis:
+                string nome = cmbVendedoresCadastrados.Text;
+                int codigoPeca = int.Parse(txtPecaCodigo.Text);
+                double precoUnitario = double.Parse(txtPrecoPeca.Text);
+                int quantidadeVendida = int.Parse(txtQuantidadepecaVendida.Text);
 
+                //Chamando Função de Calcular Comissão.
+                var resultadoComissao = (Comissao.CalcularComissao(precoUnitario, quantidadeVendida).ToString());
+
+                //Adicionando os dados na List Box
+                ltbListaDePecas.Items.Add("Nome do Vendedor: " + nome);
+                ltbListaDePecas.Items.Add("Código da Peça: " + codigoPeca);
+                ltbListaDePecas.Items.Add("Preço Unitario: " + precoUnitario);
+                ltbListaDePecas.Items.Add("Quantidade Vendida: " + quantidadeVendida);
+                ltbListaDePecas.Items.Add("Valor da Comissão: " + resultadoComissao);
+                ltbListaDePecas.Items.Add("-----------------------------");
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Confira os dados inseridos, Erro ao receber Informações passadas");
+            }
         }
     }
 }

@@ -39,7 +39,7 @@
             // 
             // txtPecaCodigo
             // 
-            this.txtPecaCodigo.Location = new System.Drawing.Point(12, 41);
+            this.txtPecaCodigo.Location = new System.Drawing.Point(12, 52);
             this.txtPecaCodigo.Name = "txtPecaCodigo";
             this.txtPecaCodigo.PlaceholderText = "Codigo da Peça";
             this.txtPecaCodigo.Size = new System.Drawing.Size(100, 23);
@@ -48,7 +48,7 @@
             // 
             // txtPrecoPeca
             // 
-            this.txtPrecoPeca.Location = new System.Drawing.Point(12, 84);
+            this.txtPrecoPeca.Location = new System.Drawing.Point(131, 52);
             this.txtPrecoPeca.Name = "txtPrecoPeca";
             this.txtPrecoPeca.PlaceholderText = "Valor Unitario";
             this.txtPrecoPeca.Size = new System.Drawing.Size(100, 23);
@@ -57,7 +57,7 @@
             // 
             // txtQuantidadepecaVendida
             // 
-            this.txtQuantidadepecaVendida.Location = new System.Drawing.Point(12, 127);
+            this.txtQuantidadepecaVendida.Location = new System.Drawing.Point(251, 52);
             this.txtQuantidadepecaVendida.Name = "txtQuantidadepecaVendida";
             this.txtQuantidadepecaVendida.PlaceholderText = "Quantidade";
             this.txtQuantidadepecaVendida.Size = new System.Drawing.Size(100, 23);
@@ -67,27 +67,23 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Lime;
-            this.button1.Location = new System.Drawing.Point(12, 169);
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(362, 52);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 64);
+            this.button1.Size = new System.Drawing.Size(128, 23);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Adcionar Peça";
+            this.button1.Text = "Adicionar Peça";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cmbVendedoresCadastrados
             // 
             this.cmbVendedoresCadastrados.FormattingEnabled = true;
-            this.cmbVendedoresCadastrados.Items.AddRange(new object[] {
-            "1 - Reuber",
-            "2 - João",
-            "3 - Shamyra",
-            "4 - Jeanderson",
-            "5 - Welton"});
-            this.cmbVendedoresCadastrados.Location = new System.Drawing.Point(89, 8);
+            this.cmbVendedoresCadastrados.Location = new System.Drawing.Point(140, 9);
             this.cmbVendedoresCadastrados.Name = "cmbVendedoresCadastrados";
             this.cmbVendedoresCadastrados.Size = new System.Drawing.Size(129, 23);
             this.cmbVendedoresCadastrados.TabIndex = 5;
-            this.cmbVendedoresCadastrados.ValueMemberChanged += new System.EventHandler(this.comboBox1_ValueMemberChanged);
             // 
             // lblVendedorNome
             // 
@@ -103,16 +99,17 @@
             // 
             this.ltbListaDePecas.FormattingEnabled = true;
             this.ltbListaDePecas.ItemHeight = 15;
-            this.ltbListaDePecas.Location = new System.Drawing.Point(139, 43);
+            this.ltbListaDePecas.Location = new System.Drawing.Point(12, 94);
             this.ltbListaDePecas.Name = "ltbListaDePecas";
-            this.ltbListaDePecas.Size = new System.Drawing.Size(291, 154);
+            this.ltbListaDePecas.Size = new System.Drawing.Size(478, 184);
             this.ltbListaDePecas.TabIndex = 7;
             // 
             // frmComissionamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 245);
+            this.BackColor = System.Drawing.Color.Gray;
+            this.ClientSize = new System.Drawing.Size(516, 290);
             this.Controls.Add(this.ltbListaDePecas);
             this.Controls.Add(this.lblVendedorNome);
             this.Controls.Add(this.cmbVendedoresCadastrados);
@@ -121,7 +118,7 @@
             this.Controls.Add(this.txtPrecoPeca);
             this.Controls.Add(this.txtPecaCodigo);
             this.Name = "frmComissionamento";
-            this.Text = "frmComissionamento";
+            this.Text = "Comissão";
             this.ResumeLayout(false);
             this.PerformLayout();
 
