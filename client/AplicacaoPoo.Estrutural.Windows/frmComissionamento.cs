@@ -1,5 +1,7 @@
 ﻿using AplicacaoPoo.Dominio.Helpers;
+using AplicacaoPoo.Dominio.Services;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +22,11 @@ namespace AplicacaoPoo.Estrutural.Windows
             cmbVendedoresCadastrados.DataSource = vendedores.VendedorList();
             cmbVendedoresCadastrados.DisplayMember = "Nome";
             cmbVendedoresCadastrados.SelectedIndex = 0;
+
+            var produtos = new ProdutoService();
+            cmbProdutos.DataSource = produtos.ListagemProdutosFake();
+            cmbProdutos.DisplayMember = "Nome";
+            cmbProdutos.ValueMember = "CodPeca";
         }
 
         
@@ -30,21 +37,19 @@ namespace AplicacaoPoo.Estrutural.Windows
                 //Declaração de Variaveis:
                 string nome = cmbVendedoresCadastrados.Text;
                 string data = mtbData.Text;
-                int codigoPeca = int.Parse(txtPecaCodigo.Text);
-                double precoUnitario = double.Parse(txtPrecoPeca.Text);
                 int quantidadeVendida = int.Parse(txtQuantidadepecaVendida.Text);
+                
 
-                //Chamando Função de Calcular Comissão.
-                var resultadoComissao = (Comissao.CalcularComissao(precoUnitario, quantidadeVendida).ToString());
 
-                //Adicionando os dados na List Box
-                ltbListaDePecas.Items.Add("Nome do Vendedor: " + nome);
-                ltbListaDePecas.Items.Add("Data da Venda:" + data);
-                ltbListaDePecas.Items.Add("Código da Peça: " + codigoPeca);
-                ltbListaDePecas.Items.Add("Preço Unitario: " + precoUnitario);
-                ltbListaDePecas.Items.Add("Quantidade Vendida: " + quantidadeVendida);
-                ltbListaDePecas.Items.Add("Valor da Comissão: " + resultadoComissao);
-                ltbListaDePecas.Items.Add("-----------------------------");
+                //chamando função de calcular comissão.
+                // var resultadocomissao = (comissao.calcularcomissao(precounitario, quantidadevendida).tostring());
+
+                //adicionando os dados na list box
+                //ltblistadepecas.items.add("nome do vendedor: " + nome);
+               // ltblistadepecas.items.add("data da venda:" + data);
+               // ltblistadepecas.items.add("quantidade vendida: " + quantidadevendida);
+                //ltblistadepecas.items.add("valor da comissão: " + resultadocomissao);
+               // ltblistadepecas.items.add("-----------------------------");
 
             }
             catch (Exception)
@@ -52,6 +57,17 @@ namespace AplicacaoPoo.Estrutural.Windows
 
                 MessageBox.Show("Confira os dados inseridos, Erro ao receber Informações passadas");
             }
+        }
+
+        private void cmbProdutos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var produtoSelecionado = (Produto)cmbProdutos.SelectedValue;
+                
+                
+            var produto = new ProdutoService();
+            var produtosFake = produto.ListagemProdutosFake();
+            var dado = produtosFake.Where(x => x.CodPeca == produtoSelecionado.CodPeca).FirstOrDefault();
+            txtPrecoPeca.Text = dado.ValorUnitario.ToString();
         }
     }
 }

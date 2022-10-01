@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AplicacaoPoo.Dominio.Helpers
+namespace AplicacaoPoo.Dominio.Services
 {
     public class Vendedor
     {
         public int Id { get; set; }
         public string Nome { get; set; }
+       
         public List<Vendedor> VendedorList()
         {
             var lista = new List<Vendedor>();

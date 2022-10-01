@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtPecaCodigo = new System.Windows.Forms.TextBox();
             this.txtPrecoPeca = new System.Windows.Forms.TextBox();
             this.txtQuantidadepecaVendida = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -36,16 +35,8 @@
             this.lblVendedorNome = new System.Windows.Forms.Label();
             this.ltbListaDePecas = new System.Windows.Forms.ListBox();
             this.mtbData = new System.Windows.Forms.MaskedTextBox();
+            this.cmbProdutos = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // txtPecaCodigo
-            // 
-            this.txtPecaCodigo.Location = new System.Drawing.Point(12, 52);
-            this.txtPecaCodigo.Name = "txtPecaCodigo";
-            this.txtPecaCodigo.PlaceholderText = "Codigo da Peça";
-            this.txtPecaCodigo.Size = new System.Drawing.Size(100, 23);
-            this.txtPecaCodigo.TabIndex = 1;
-            this.txtPecaCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtPrecoPeca
             // 
@@ -114,12 +105,22 @@
             this.mtbData.TabIndex = 8;
             this.mtbData.ValidatingType = typeof(System.DateTime);
             // 
+            // cmbProdutos
+            // 
+            this.cmbProdutos.FormattingEnabled = true;
+            this.cmbProdutos.Location = new System.Drawing.Point(12, 52);
+            this.cmbProdutos.Name = "cmbProdutos";
+            this.cmbProdutos.Size = new System.Drawing.Size(113, 23);
+            this.cmbProdutos.TabIndex = 9;
+            this.cmbProdutos.SelectedIndexChanged += new System.EventHandler(this.cmbProdutos_SelectedIndexChanged);
+            // 
             // frmComissionamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(516, 290);
+            this.Controls.Add(this.cmbProdutos);
             this.Controls.Add(this.mtbData);
             this.Controls.Add(this.ltbListaDePecas);
             this.Controls.Add(this.lblVendedorNome);
@@ -127,7 +128,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtQuantidadepecaVendida);
             this.Controls.Add(this.txtPrecoPeca);
-            this.Controls.Add(this.txtPecaCodigo);
             this.Name = "frmComissionamento";
             this.Text = "Comissão";
             this.ResumeLayout(false);
@@ -136,8 +136,6 @@
         }
 
         #endregion
-
-        private TextBox txtPecaCodigo;
         private TextBox txtPrecoPeca;
         private TextBox txtQuantidadepecaVendida;
         private Button button1;
@@ -145,5 +143,6 @@
         private Label lblVendedorNome;
         private ListBox ltbListaDePecas;
         private MaskedTextBox mtbData;
+        private ComboBox cmbProdutos;
     }
 }
